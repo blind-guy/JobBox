@@ -1,5 +1,6 @@
 <?php
 //Authentication Controller
+Route::get('', 'AuthenticationController@showLoginView');
 Route::get('/login', 'AuthenticationController@showLoginView');
 Route::post('/login', 'AuthenticationController@loginUser');
 
