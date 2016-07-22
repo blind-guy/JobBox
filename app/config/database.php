@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      =>  getenv("DB_HOST"),
-			'database'  =>  'forge',//'fb',
-			'username'  =>  getenv("DB_USERNAME"),//'root',
-			'password'  =>  getenv("DB_PASSWORD"),//'root',
+			'database'  =>  getenv("DB_NAME"),
+			'username'  =>  getenv("DB_USERNAME"),
+			'password'  =>  getenv("DB_PASSWORD"),
 			'unix_socket'	=> '/Applications/MAMP/tmp/mysql/mysql.sock',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
