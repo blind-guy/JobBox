@@ -23,11 +23,11 @@
 
 					{{ Form::email('email', null, [ 'placeholder' => 'Email', 'required', 'class' => 'form-control']) }}
 					<br>
-					{{ Form::password('password' , [ 'placeholder' => 'Password', 'required', class' => 'form-control'])}}
+					{{ Form::password('password' , [ 'placeholder' => 'Password', 'required', 'class' => 'form-control'])}}
 					<br>
-					{{ Form::password('repassword' , [ 'placeholder' => 'Re Type Password', 'required', class' => 'form-control'])}}	
+					{{ Form::password('repassword' , [ 'placeholder' => 'Re Type Password', 'required', 'class' => 'form-control'])}}	
 					<br>
-					{{Form::text('name', null, ['placeholder' => 'Name', 'required', class' => 'form-control'])}}
+					{{Form::text('name', null, ['placeholder' => 'Name', 'required', 'class' => 'form-control'])}}
 					<br>
 					<h4>Gender</h4>
 					{{Form::radio('gender', 'male')}} Male
