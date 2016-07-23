@@ -26,7 +26,7 @@
 
 
 				@endif
-				<h1>Login View</h1>
+				<h1>Job Box Login</h1>
 
 				{{Form::open(['action' => 'AuthenticationController@loginUser', 'method' => 'POST', 'class' => 'form-horizontal'])}}
 
