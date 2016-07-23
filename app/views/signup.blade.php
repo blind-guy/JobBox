@@ -17,9 +17,11 @@
 
 		<div class="col-md-6">
 			<h1>Sign Up</h1>
+			<form>
+
 				{{Form::open(['action'=> 'RegistrationController@signUp', 'method' => 'POST'])}}
 
-					{{ Form::email('email', null, [ 'placeholder' => 'Email', 'required']) }}
+					{{ Form::email('email', null, [ 'placeholder' => 'Email', 'required', 'class' => 'form-control']) }}
 					<br>
 					{{ Form::password('password' , [ 'placeholder' => 'Password', 'required'])}}
 					<br>
@@ -27,6 +29,7 @@
 					<br>
 					{{Form::text('name', null, ['placeholder' => 'Name', 'required'])}}
 					<br>
+					<h4>Gender</h4>
 					{{Form::radio('gender', 'male')}} Male
 					<br>
 					{{Form::radio('gender', 'female')}} Female
@@ -35,7 +38,7 @@
 
 				{{Form::close()}}
 
-
+				</form>
 		</div>
 
 		<div class="col-md-3">
