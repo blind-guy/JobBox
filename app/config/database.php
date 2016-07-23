@@ -58,7 +58,7 @@ return array(
 			'database'  =>  getenv("DB_NAME"),
 			'username'  =>  getenv("DB_USERNAME"),
 			'password'  =>  getenv("DB_PASSWORD"),
-			'unix_socket'	=> '/Applications/MAMP/tmp/mysql/mysql.sock',
+			//'unix_socket'	=> '/Applications/MAMP/tmp/mysql/mysql.sock',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
