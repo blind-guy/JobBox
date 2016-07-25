@@ -54,7 +54,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      =>  '104.236.232.80', //$_ENV['DB_HOST'],
+			'host'      =>  $_ENV['DB_HOST'],
 			'database'  =>  $_ENV['DB_NAME'],
 			'username'  =>  $_ENV['DB_USERNAME'],
 			'password'  =>  $_ENV['DB_PASSWORD'],
