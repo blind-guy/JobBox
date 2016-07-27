@@ -593,3 +593,7 @@ Stack trace:
 #16 /Users/elijah/School/Summer_2016/CS4413/groupproject/4413Project/vendor/symfony/console/Symfony/Component/Console/Application.php(124): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #17 /Users/elijah/School/Summer_2016/CS4413/groupproject/4413Project/artisan(59): Symfony\Component\Console\Application->run()
 #18 {main} [] []
+[2016-07-27 21:29:27] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Scheme' not found' in /Users/elijah/School/Summer_2016/CS4413/groupproject/4413Project/app/database/migrations/2016_07_27_211711_create_jobs_table.php:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
