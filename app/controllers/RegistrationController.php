@@ -31,7 +31,6 @@ class RegistrationController extends \BaseController{
             return Redirect::back()->withInput();
         }
 
-
 		$email = Input::get('email');
 		$password = Input::get('password');
 		$repassword = Input::get('repassword');

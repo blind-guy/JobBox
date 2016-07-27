@@ -20,7 +20,6 @@
 			<form>
 
 				{{Form::open(['action'=> 'RegistrationController@signUp', 'method' => 'POST'])}}
-
 					{{ Form::email('email', null, [ 'placeholder' => 'Email', 'required', 'class' => 'form-control']) }}
 					<br>
 					{{ Form::password('password' , [ 'placeholder' => 'Password', 'required', 'class' => 'form-control'])}}
