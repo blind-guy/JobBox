@@ -18,6 +18,7 @@ class RegistrationController extends \BaseController{
 
 		
 		$validation = Validator::make(Input::all(),[
+			'username' => 'required|unique:users',
 			'email' =>' required|unique:users', 
 			'password' => 'required',
 			'repassword' => 'required',
@@ -31,7 +32,7 @@ class RegistrationController extends \BaseController{
             return Redirect::back()->withInput();
         }
 
-
+		$username = Input::get('username');
 		$email = Input::get('email');
 		$password = Input::get('password');
 		$repassword = Input::get('repassword');

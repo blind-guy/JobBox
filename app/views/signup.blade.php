@@ -20,14 +20,17 @@
 			<form>
 
 				{{Form::open(['action'=> 'RegistrationController@signUp', 'method' => 'POST'])}}
+					{{Form::text('username', null, ['placeholder' => 'Username', 'required', 'class' => 'form-control'])}}
+					<br>
+					{{Form::text('name', null, ['placeholder' => 'Name', 'required', 'class' => 'form-control'])}}
+					<br>
 					{{ Form::email('email', null, [ 'placeholder' => 'Email', 'required', 'class' => 'form-control']) }}
 					<br>
 					{{ Form::password('password' , [ 'placeholder' => 'Password', 'required', 'class' => 'form-control'])}}
 					<br>
 					{{ Form::password('repassword' , [ 'placeholder' => 'Re Type Password', 'required', 'class' => 'form-control'])}}	
 					<br>
-					{{Form::text('name', null, ['placeholder' => 'Name', 'required', 'class' => 'form-control'])}}
-					<br>
+
 					<h4>Gender</h4>
 					{{Form::radio('gender', 'male')}} Male
 					<br>
