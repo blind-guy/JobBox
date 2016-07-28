@@ -593,6 +593,7 @@ Stack trace:
 #16 /Users/elijah/School/Summer_2016/CS4413/groupproject/4413Project/vendor/symfony/console/Symfony/Component/Console/Application.php(124): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #17 /Users/elijah/School/Summer_2016/CS4413/groupproject/4413Project/artisan(59): Symfony\Component\Console\Application->run()
 #18 {main} [] []
+<<<<<<< HEAD
 [2016-07-27 21:16:37] production.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in C:\4413Project\vendor\laravel\framework\src\Illuminate\Routing\RouteCollection.php:148
 Stack trace:
 #0 C:\4413Project\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1054): Illuminate\Routing\RouteCollection->match(Object(Illuminate\Http\Request))
@@ -1181,3 +1182,9 @@ Stack trace:
 #1 C:\4413Project\vendor\symfony\console\Symfony\Component\Console\Application.php(124): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #2 C:\4413Project\artisan(59): Symfony\Component\Console\Application->run()
 #3 {main} [] []
+=======
+[2016-07-27 21:29:27] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Scheme' not found' in /Users/elijah/School/Summer_2016/CS4413/groupproject/4413Project/app/database/migrations/2016_07_27_211711_create_jobs_table.php:16
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+>>>>>>> origin/master
