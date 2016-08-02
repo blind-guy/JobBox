@@ -19,9 +19,16 @@ class HomeController extends BaseController {
 	
 	public function showHomePage(){
 		
+		if(!Auth::check()){
+			return Redirect::to('/login');
+		}
+
+		$user = Auth::user();
 		
 		
-		return View::make('home');
+		return View::make('home',[
+			'user' => $user
+		]);
 		
 	}
 }
