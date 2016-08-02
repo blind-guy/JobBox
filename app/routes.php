@@ -14,11 +14,14 @@ Route::get('/users', 'AuthenticationController@showUsers');
 Route::get('/signup', 'RegistrationController@showSignUpView');
 Route::post('/signup', 'RegistrationController@signUp');
 
-//Profile 
-Route::get('/profile/{uid}', 'HomeController@showUserProfile');
+//Profile    CHANGE THIS TO A DIFFERENT CONTROLLER
+//Route::get('/profile/{uid}', 'HomeController@showUserProfile');
 
 //Feed
-Route::get('/feed', 'FeedController@showFeed');
+//Route::get('/feed', 'FeedController@showFeed');
 
 //Post
 Route::post('/post', 'PostController@createPost');
+
+//Home
+Route::get('/home', 'HomeController@showHomePage');

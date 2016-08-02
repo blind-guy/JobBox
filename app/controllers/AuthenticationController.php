@@ -22,8 +22,8 @@ class AuthenticationController extends \BaseController {
         }
 
 		if (Auth::attempt(Input::only('email', 'password'), true)){
-
-			return Redirect::to('/feed');
+			//return to main page
+			return Redirect::to('/home');
 		}else{
 
 			Session::flash('error_message', 'Invalid credentials');

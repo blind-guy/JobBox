@@ -33,14 +33,14 @@
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 					<div class="col-sm-10">
-						{{ Form::email('email', null, [ 'placeholder' => 'Email', 'required']) }}
+						{{ Form::email('email', null, [ 'placeholder' => 'Email', 'class' => 'form-control', 'required']) }}
 					</div>
 				</div>
 
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">Password</label>
 					<div class="col-sm-10">
-						{{ Form::password("password" , [ 'placeholder' => 'Password', 'required'])}}
+						{{ Form::password("password" , [ 'placeholder' => 'Password', 'class' => 'form-control','required' ])}}
 					</div>
 				</div>
 

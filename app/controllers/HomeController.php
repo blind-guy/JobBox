@@ -16,6 +16,18 @@ class HomeController extends BaseController {
 	*/
 
 
+	
+	public function showHomePage(){
+		
+		
+		
+		return View::make('home');
+		
+	}
+}
+/*old code, could use later for the profile
+
+
 	public function showUserProfile($uid){
 
 		$count = User::where('id', '=', $uid)->count();
@@ -38,3 +50,4 @@ class HomeController extends BaseController {
 
 
 }
+*/
