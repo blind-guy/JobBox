@@ -7,9 +7,15 @@
 
 	@yield('style')
     <style>
+        body{
+            background: #eeeeee;
+        }
         #headerBar {
             width: 100%;
             background-color: #5cb85c;
+        }
+        #headerBar a {
+            color: #006400;
         }
         .add-on .input-group-btn > .btn {
             border-left-width:0;left:-2px;
@@ -74,9 +80,16 @@
             <div class="col-md-4">
                 <div id="user-logout">
                     <h5 style="text-align:right">
-                        <a href="#">John Doe</a>
+                        @if (Auth::check())
+                            <a href="/home">{{{Auth::user()->email}}}</a>
+                            &nbsp; | &nbsp;
+                            <a href="/logout">Logout<a>
+                        @else
+                            <a href="/loginhelp">Login Help</a>
+                        @endif
+                      <!---  <a href="#">John Doe</a> 
                         &nbsp;|&nbsp;
-                        <a href="/logout">logout</a>
+                        <a href="/logout">logout</a> --->
                     </h5>
                 </div>
             </div>

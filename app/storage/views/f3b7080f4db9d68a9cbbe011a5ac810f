@@ -7,9 +7,15 @@
 
 	<?php echo $__env->yieldContent('style'); ?>
     <style>
+        body{
+            background: #eeeeee;
+        }
         #headerBar {
             width: 100%;
             background-color: #5cb85c;
+        }
+        #headerBar a {
+            color: #006400;
         }
         .add-on .input-group-btn > .btn {
             border-left-width:0;left:-2px;
@@ -74,9 +80,16 @@
             <div class="col-md-4">
                 <div id="user-logout">
                     <h5 style="text-align:right">
-                        <a href="#">John Doe</a>
+                        <?php if(Auth::check()): ?>
+                            <a href="/home"><?php echo e(Auth::user()->email); ?></a>
+                            &nbsp; | &nbsp;
+                            <a href="/logout">Logout<a>
+                        <?php else: ?>
+                            <a href="/loginhelp">Login Help</a>
+                        <?php endif; ?>
+                      <!---  <a href="#">John Doe</a> 
                         &nbsp;|&nbsp;
-                        <a href="/logout">logout</a>
+                        <a href="/logout">logout</a> --->
                     </h5>
                 </div>
             </div>
