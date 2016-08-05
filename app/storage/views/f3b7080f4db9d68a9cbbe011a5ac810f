@@ -83,13 +83,10 @@
                         <?php if(Auth::check()): ?>
                             <a href="/home"><?php echo e(Auth::user()->email); ?></a>
                             &nbsp; | &nbsp;
-                            <a href="/logout">Logout<a>
+                            <a href="/logout">Logout</a>
                         <?php else: ?>
                             <a href="/loginhelp">Login Help</a>
                         <?php endif; ?>
-                      <!---  <a href="#">John Doe</a> 
-                        &nbsp;|&nbsp;
-                        <a href="/logout">logout</a> --->
                     </h5>
                 </div>
             </div>

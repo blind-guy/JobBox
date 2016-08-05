@@ -83,13 +83,10 @@
                         @if (Auth::check())
                             <a href="/home">{{{Auth::user()->email}}}</a>
                             &nbsp; | &nbsp;
-                            <a href="/logout">Logout<a>
+                            <a href="/logout">Logout</a>
                         @else
                             <a href="/loginhelp">Login Help</a>
                         @endif
-                      <!---  <a href="#">John Doe</a> 
-                        &nbsp;|&nbsp;
-                        <a href="/logout">logout</a> --->
                     </h5>
                 </div>
             </div>
