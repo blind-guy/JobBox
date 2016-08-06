@@ -7,6 +7,7 @@ composer.lock
 .DS_Store
 Thumbs.db
 laravel.log
+database.php
 
 tests/_output/* 
 
