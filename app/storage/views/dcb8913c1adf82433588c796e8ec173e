@@ -1,5 +1,5 @@
 <?php $__env->startSection('title'); ?>
-	<title>Facebook | Login Page</title>
+	<title>Welcome to Job Box! | Login Page</title>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('style'); ?>
@@ -24,7 +24,7 @@
 
 
 				<?php endif; ?>
-				<h1>Login View</h1>
+				<h1>Job Box Login</h1>
 
 				<?php echo Form::open(['action' => 'AuthenticationController@loginUser', 'method' => 'POST', 'class' => 'form-horizontal']); ?>
 
@@ -32,7 +32,7 @@
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">Email</label>
 					<div class="col-sm-10">
-						<?php echo Form::email('email', null, [ 'placeholder' => 'Email', 'required']); ?>
+						<?php echo Form::email('email', null, [ 'placeholder' => 'Email', 'class' => 'form-control', 'required']); ?>
 
 					</div>
 				</div>
@@ -40,7 +40,7 @@
 				<div class="form-group">
 					<label for="inputEmail3" class="col-sm-2 control-label">Password</label>
 					<div class="col-sm-10">
-						<?php echo Form::password("password" , [ 'placeholder' => 'Password', 'required']); ?>
+						<?php echo Form::password("password" , [ 'placeholder' => 'Password', 'class' => 'form-control','required' ]); ?>
 
 					</div>
 				</div>
@@ -51,10 +51,12 @@
 
 			 			<?php echo Form::close(); ?>
 
+						<br>
+						<br>
+						<a href="signup">Sign Up</a>
 			 		</div>
 			 	</div>
 			</div>
-
 			<div class="col-md-3">
 			</div>
 

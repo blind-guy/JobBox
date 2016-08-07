@@ -18,13 +18,23 @@ body{
     -webkit-box-shadow:none; 
     border-color:#cccccc; 
 }
-.form-control{width:20%}
+.form-control{width:40%}
     #company-name{
     margin: 5px 0px 0px 0px;
 }
 #user-logout{
     margin: 15px 0px 0px 0px;
 }
+
+.btn-primary{
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
+.btn-primary:hover{
+    background-color: #145A32;
+}
+
+
 @media (min-width: 768px) {
     .sidebar-nav .navbar .navbar-collapse {
         padding: 0;

@@ -9,4 +9,6 @@ Thumbs.db
 laravel.log
 app/config/database.php
 tests/_output/* 
+app/config/database.php
 
+app/storage/meta/services.json

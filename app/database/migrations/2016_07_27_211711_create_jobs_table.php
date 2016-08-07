@@ -16,6 +16,7 @@ class CreateJobsTable extends Migration {
         Schema::create('jobs', function(Blueprint $table)
         {
             $table->increments('id');
+            $table->integer('company_id');
             $table->string('company_name');
             $table->date('posted');
             $table->date('expired');

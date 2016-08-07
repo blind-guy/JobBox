@@ -58,7 +58,8 @@
                         <div class="navbar-collapse collapse sidebar-navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="#">My Page</a></li>
-                                <li><a href="#">Add Job</a></li>
+                                <li><a href='/jobs'>View My Jobs</a></li>
+                                <li><a href='/addjob'>Add Job</a></li>
                                 <li><a href="#">Edit Profile</a></li>
                                 <li><a href="#">Manage Documents</a></li>
                                 <li><a href="#">Manage Contacts</a></li>
@@ -72,7 +73,14 @@
 	            @yield('content')
             </div>
         </div>
+        <!--end of first row-->
     </div>
-	<script src="{{ URL::asset('boostrap/js/bootstrap.min.js') }}"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{{ URL::asset('boostrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{asset('/js/jquery-3.1.0.min.js')}}"></script>
+    <script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
+    <script src='/js/vue.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	@yield('footer')
 </body>
 </html>

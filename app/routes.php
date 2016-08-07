@@ -25,3 +25,9 @@ Route::post('/post', 'PostController@createPost');
 
 //Home
 Route::get('/home', 'HomeController@showHomePage');
+
+//Job Controllers
+Route::get( '/addjob', 'ListsController@getLists');
+//Route::get( '/addjob', 'JobsController@showAddJobsView');
+Route::post('/addjob', 'JobsController@addJob');
+Route::get( '/jobs', 'JobsController@viewJobs');
