@@ -77,14 +77,17 @@ class JobsController extends \BaseController {
         }
 
         $user = Auth::user();
-        $job = Job::where('company_id', '=', $companyid)->first();
+        $job = Job::where('position', '=', $position)->first();
 
-        //dd($user);
+
+        //dd($user->id);
+        //dd($job->position);
+        //dd($job->id);
         // Add an entry to the user_job table
         try{
             UserJob::create([
-                'user_id' => $user->id,
-                'job_id' => $job->id
+                'user_id' => $user->id, //1
+                'job_id' => $job->id    // 3
             ]);
 
         }catch(Exception $e){
@@ -112,20 +115,23 @@ class JobsController extends \BaseController {
 
         // Get your set of User-Jobs
         try{
-            $userjobs = UserJob::where('user_id', '=', $user->id)->get();
+            $userjobs = UserJob::where('user_id', '=', $user->id)->lists('job_id');
         }catch(Exception $e){
             Session::flash('error_message', 'No jobs found!');
             return Redirect::back()->withInput();
         }
 
-        foreach($userjobs as $userjob){
-            $myjobs = Job::where('job_id', '=', $userjob->id)->get();
-        }
 
+        foreach($userjobs as $userjob){
+            $myjob = Job::where('id', '=', $userjob)->first();
+            $myjobs[] = $myjob;
+        }
+        
         return View::make('viewjobs', [
             'user'  => $user,
             'jobs' => $myjobs,
         ]);
+        
 
     }
 

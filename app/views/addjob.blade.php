@@ -2,7 +2,6 @@
 
 @section('title')
 	<title>JobBox | Add a New Job</title>
-	<hr>
 @stop
 
 @section('style')
@@ -102,6 +101,7 @@
 
 		<!--col 3 -->
 		<div class="col-md-2">
+
 		</div>	
 	</div>
 	<div class="container-fluid">

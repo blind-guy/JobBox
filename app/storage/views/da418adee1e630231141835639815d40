@@ -1,0 +1,86 @@
+<?php $__env->startSection('title'); ?>
+  <title>JobBox | My Jobs</title>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('style'); ?>
+  <link rel="stylesheet" type="text/css" href="/css/jobs.css">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<div class="container-fluid"> 
+    <!--col 1 -->
+    
+    <div class="col-md-1">
+    </div>
+
+    <!--col 2 -->
+    <div class="col-md-10 jobform">
+      <?php if(Session::has('error_message')): ?>
+        <div class="alert alert-danger" role="alert"> 
+          <?php echo Session::get('error_message'); ?>
+
+        </div>
+      <?php endif; ?>
+      <?php if(Session::has('success_message')): ?>
+        <div class="alert alert-success" role="alert">  
+          <?php echo Session::get('success_message'); ?>
+
+        </div>
+      <?php endif; ?>
+      <?php if(Session::has('validation_messages')): ?>
+        <div class="alert alert-danger" role="alert">
+          <h4>Oops! Something is wrong!</h4>
+            <?php foreach(Session::get('validation_messages')->all() as $error): ?>
+              <?php echo $error; ?><br>
+            <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+
+      <h1 class="text-center"><?php echo $user->name; ?>'s Jobs</h1>
+      <hr>
+      <?php foreach($jobs as $job): ?>
+                <div class="row job clearfix">
+                  <div class="col-md-7">
+                    <h3><?php echo $job->position; ?></h3>
+                    <h4><?php echo $job->company_name; ?></h4>
+
+                    <div class="panel-body" id="job_details">
+                      <h5>Date Posted: <?php echo $job->posted; ?></h5>
+                      <h6><?php echo $job->summary; ?></h6>
+                    </div>
+                  </div>  
+
+                  <div class="col-md-3 container-fluid">
+                   <a href="http://<?php echo $job->job_url; ?>" class="btn btn-default btn-block" id="job_url">View Listing</a>
+                  </div>     
+              
+                </div>
+                <hr>
+      <?php endforeach; ?> 
+    </div>
+    <!-- end of form -->
+
+    <!--col 3 -->
+    <div class="col-md-1">
+
+    </div>  
+  </div>
+  <div class="container-fluid">
+    <div class="row" style="height:50px">
+    </div>
+  </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('footer'); ?>
+<script>
+  $(document).ready(function(){
+      $("button").click(function(){
+          $(this).closest("div").find("#more").toggleClass("hidden", 4000, "easeOutCirc" );
+      });
+  });
+
+</script>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

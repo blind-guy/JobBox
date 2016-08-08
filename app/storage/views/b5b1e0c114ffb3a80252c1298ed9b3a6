@@ -14,7 +14,7 @@
     <div id="headerBar">
         <div class="container">
             <div class="col-md-4" id="company-name">  
-                <h4>JobBox</h4>
+                <h4 id="nav_title">JobBox</h4>
             </div>
             <div class="col-md-4">
                 <form class="navbar-form" role="search">
