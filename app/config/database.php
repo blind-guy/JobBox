@@ -54,11 +54,11 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      =>  'localhost', //getenv('DB_HOST'),
-			'database'  =>  'forge', //getenv('DB_NAME'),
-			'username'  =>  'root', //getenv('DB_USERNAME'),
-			'password'  =>  'root', //getenv('DB_PASSWORD'),
-			'unix_socket'	=> '/Applications/MAMP/tmp/mysql/mysql.sock',
+			'host'      =>  getenv('DB_HOST'),
+			'database'  =>  getenv('DB_NAME'),
+			'username'  =>  getenv('DB_USERNAME'),
+			'password'  =>  getenv('DB_PASSWORD'),
+			//'unix_socket'	=> '/Applications/MAMP/tmp/mysql/mysql.sock',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
