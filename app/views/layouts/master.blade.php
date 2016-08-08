@@ -13,30 +13,32 @@
 <body>
     <div id="headerBar">
         <div class="container">
-            <div class="col-md-4" id="company-name">  
-                <h4 id="nav_title">JobBox</h4>
-            </div>
-            <div class="col-md-4">
-                <form class="navbar-form" role="search">
-                    <div class="input-group add-on">
-                        <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-4" id="company-name">
+                    <h4 id="nav_title">JobBox</h4>
+                </div>
+                <div class="hidden-xs col-sm-4">
+                    <form class="navbar-form" role="search">
+                        <div class="input-group add-on">
+                            <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                    <div id="user-logout">
+                        <h5 style="text-align:right">
+                            @if (Auth::check())
+                                <a href="/home">{{{Auth::user()->email}}}</a>
+                                &nbsp; | &nbsp;
+                                <a href="/logout">Logout</a>
+                            @else
+                                <a href="/loginhelp">Login Help</a>
+                            @endif
+                        </h5>
                     </div>
-                </form>
-            </div>
-            <div class="col-md-4">
-                <div id="user-logout">
-                    <h5 style="text-align:right">
-                        @if (Auth::check())
-                            <a href="/home">{{{Auth::user()->email}}}</a>
-                            &nbsp; | &nbsp;
-                            <a href="/logout">Logout</a>
-                        @else
-                            <a href="/loginhelp">Login Help</a>
-                        @endif
-                    </h5>
                 </div>
             </div>
         </div>
@@ -72,7 +74,6 @@
             <div class="col-sm-9">
 	            @yield('content')
             </div>
-        </div>
         <!--end of first row-->
     </div>
     <!-- Latest compiled and minified JavaScript -->
