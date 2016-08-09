@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="{{ URL::asset('bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('CSS/master.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/master.css') }}">
 	<meta charset="UTF-8">
 	@yield('title')
 
 	@yield('style')
-    <style>
-    </style>
 </head>
 <body>
     <div id="headerBar">
@@ -71,8 +69,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-6">
 	            @yield('content')
+            </div>
+            <div class="col-sm-3">
+                <div id="topmedia" class="media">
+                    <h4>News</h4>
+                </div>
             </div>
         <!--end of first row-->
     </div>

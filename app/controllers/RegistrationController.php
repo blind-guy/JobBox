@@ -45,14 +45,21 @@ class RegistrationController extends \BaseController{
 		$name = Input::get('name');
 		$gender = Input::get('gender');
 
-
+        $image = Input::file('image');
+        $destination = 'public/images/';
+        $filename = $image->getClientOriginalName();
+        $image->move($destination, $filename);
+        $profile_pic = 'images/'.$filename;
+/*        var_dump($profile_pic);
+        die(); */
 		try{
 
 			User::create([
 				'email'	=> $email,
 				'password'	=> Hash::make($password),
 				'name' => $name,
-				'gender'	=> $gender
+				'gender'	=> $gender,
+                'profile_pic' => $profile_pic
 			]);
 
 		}catch(Exception $e){
