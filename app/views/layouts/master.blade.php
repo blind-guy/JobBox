@@ -60,7 +60,7 @@
                                 <li class="active"><a href="#">My Page</a></li>
                                 <li><a href='/jobs'>View My Jobs</a></li>
                                 <li><a href='/addjob'>Add Job</a></li>
-                                <li><a href="#">Edit Profile</a></li>
+                                <li><a href="/profile">Edit Profile</a></li>
                                 <li><a href="#">Manage Documents</a></li>
                                 <li><a href="#">Manage Contacts</a></li>
                                 <li><a href="#">Archived Jobs</a></li>                     

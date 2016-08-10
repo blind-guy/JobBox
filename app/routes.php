@@ -15,7 +15,8 @@ Route::get('/signup', 'RegistrationController@showSignUpView');
 Route::post('/signup', 'RegistrationController@signUp');
 
 //Profile
-Route::get('/profile', 'ProfileController@showProfile');
+Route::get('/profile', 'ProfileController@viewProfile');
+Route::post('/profile', 'ProfileController@EditProfile');
 
 //Feed
 //Route::get('/feed', 'FeedController@showFeed');
