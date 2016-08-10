@@ -23,18 +23,36 @@
 				<div class="col-sm-10">
 					{{ Form::email('email', $user->email, [ 'placeholder' => 'Email', 'class' => 'form-control', 'required']) }}
 				</div>
-			</div>			
+			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label"></label>
-				<div class="col-sm-10">
-					{{ Form::text('location', $user->location, [ 'placeholder' => 'Location (Optional)', 'class' => 'form-control']) }}
-				</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label"></label>
-				<div class="col-sm-offset-2 col-sm-5">
-					{{Form::textarea('bio', null, ['placeholder' => 'Say a few things about you.', 'size' => '50x5', 'class' => 'form-control'])}}
+				<div class="col-sm-offset-2 col-sm-10">
+					{{Form::text('country', $user->country,  ['placeholder' => 'Country', 'class' => 'form-control'])}}
 				</div>
 			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label"></label>
+				<div class="col-sm-offset-2 col-sm-10">
+					{{Form::textarea('bio', $user->bio, ['size' => '50x5', 'placeholder' => 'Bio', 'class' => 'form-control'])}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label"></label>
+				<div class="col-sm-offset-2 col-sm-10">
+					{{Form::text('company', $user->company,  ['placeholder' => 'Company', 'class' => 'form-control'])}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label"></label>
+				<div class="col-sm-offset-2 col-sm-10">
+					{{Form::text('position', $user->position,  ['placeholder' => 'position', 'class' => 'form-control'])}}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label"></label>
+				<div class="col-sm-offset-2 col-sm-10">
+					{{Form::textarea('job_description', $user->job_description,  ['size' => '50x5', 'placeholder' => 'Job Description', 'class' => 'form-control'])}}
+				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label"></label>
