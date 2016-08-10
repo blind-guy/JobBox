@@ -101,7 +101,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Job Description</label>
                 <div class="col-sm-10">
-                    {{Form::textarea('jobdesc', null, ['placeholder' => 'Give a short description of your current job.', 'size' => '50x5', 'class' => 'form-control'])}}
+                    {{Form::textarea('job_description', null, ['placeholder' => 'Give a short description of your current job.', 'size' => '50x5', 'class' => 'form-control'])}}
                 </div>
             </div>
 		    <div class="form-group">
