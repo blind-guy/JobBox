@@ -25,6 +25,11 @@ class CreateUsersTable extends Migration {
 			$table->text('question');
 			$table->text('answer');
 			$table->enum('gender', ['male', 'female']);
+			$table->text('country');
+			$table->text('bio');
+			$table->text('company');
+			$table->text('position');
+			$table->text('job_description');
 			$table->rememberToken();
 			$table->timestamps();
 		});

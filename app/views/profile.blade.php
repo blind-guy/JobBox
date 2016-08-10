@@ -29,6 +29,12 @@
 				<div class="col-sm-10">
 					{{ Form::text('location', $user->location, [ 'placeholder' => 'Location (Optional)', 'class' => 'form-control']) }}
 				</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label"></label>
+				<div class="col-sm-offset-2 col-sm-5">
+					{{Form::textarea('bio', null, ['placeholder' => 'Say a few things about you.', 'size' => '50x5', 'class' => 'form-control'])}}
+				</div>
+			</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label"></label>
