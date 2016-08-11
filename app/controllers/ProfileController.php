@@ -1,4 +1,5 @@
 <?php
+use Intervention\Image\Facades\Image as Image;
 
 class ProfileController extends \BaseController {
 	
@@ -20,29 +21,33 @@ class ProfileController extends \BaseController {
 		}
 		$user = Auth::user();
 		
-		$name = Input::get('name');
-		$email = Input::get('email');
-		$email = Input::get('email');
-		$password = Input::get('password');
-		$repassword = Input::get('repassword');
-		$country = Input::get('country');
-		$bio = Input::get('bio');
-		$company = Input::get('company');
-		$position = Input::get('position');
-		$job_description = Input::get('job_description');
-
-/*		try{
-		*/	
+		$user->name = Input::get('name');
+		$user->email = Input::get('email');
+		$user->country = Input::get('country');
+		$user->bio = Input::get('bio');
+		$user->company = Input::get('company');
+		$user->position = Input::get('position');
+		$user->job_description = Input::get('job_description');
+		
+		//image editing
+		$image = Input::file('image');
+		if($image != null){
+			$destination = 'public/images/';
+			$filename = $image->getClientOriginalName();
+			$image->move($destination, $filename);
+			Image::make($destination.$filename)->fit(300, 300)->save($destination.$filename);
+			$user->profile_pic = 'images/'.$filename;
+		}
 		$user->save();
-		/*catch(Exception $e){
+/*		try{
+		catch(Exception $e){
 
 			//Errors Log 
 			 Session::flash('error_message', 'Oops! Something is wrong!');
 			return Redirect::back()->withInput();
 		}
-*/	
-		return View::make('profile', [
-			'user' => $user]);
+*/		
+			        return Redirect::to('/profile');
 	}
 }
 ?>
