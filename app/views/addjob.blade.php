@@ -32,7 +32,7 @@
 	    		</div>
 		    @endif
 
-    		<h1 class="col-sm-offset-2">Add a New Job</h1>
+    		<h2>Add a New Job</h1>
 	    	<hr>
 
 		    {{Form::open(['action'=> 'JobsController@addJob', 'method' => 'POST', 'class' => 'form-horizontal'])}}

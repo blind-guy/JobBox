@@ -10,10 +10,9 @@
 	Location: <input type="text" class="form-control" type="text" value={{$user->location}} />
 	Date of Birth: <input type="date" class="form-control" type="text" value={{$user->email}} />
 	<br><input type="submit" class="form-control" value="Submit"></br>-->
-			<br></br>
 			{{Form::open(['action'=> 'ProfileController@EditProfile', 'method' => 'POST', 'class' => 'form-horizontal', 'files' => true])}}	
 			<div id="topmedia" class="media">
-				<h1>Edit your profile</h1>
+				<h2>Edit your profile</h1>
 				<p>Edit personal profile information</p>
 			</div>
 			<div class="media">
