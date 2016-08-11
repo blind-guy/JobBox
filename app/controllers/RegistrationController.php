@@ -1,4 +1,5 @@
 <?php
+use Intervention\Image\Facades\Image as Image;
 
 class RegistrationController extends \BaseController{
 
@@ -44,6 +45,7 @@ class RegistrationController extends \BaseController{
 		$repassword = Input::get('repassword');
 		$name = Input::get('name');
 		$gender = Input::get('gender');
+        $city = Input::get('city');
 		$country = Input::get('country');
 		$bio = Input::get('bio');
 		$company = Input::get('company');
@@ -54,17 +56,25 @@ class RegistrationController extends \BaseController{
         $destination = 'public/images/';
         $filename = $image->getClientOriginalName();
         $image->move($destination, $filename);
+
+        Image::make($destination.$filename)->fit(300, 300)->save($destination.$filename);
         $profile_pic = 'images/'.$filename;
 /*        var_dump($profile_pic);
         die(); */
 		try{
 
 			User::create([
-				'email'	=> $email,
-				'password'	=> Hash::make($password),
-				'name' => $name,
-				'gender'	=> $gender,
-                'profile_pic' => $profile_pic
+				'email'	            => $email,
+				'password'	        => Hash::make($password),
+				'name'              => $name,
+				'gender'	        => $gender,
+                'profile_pic'       => $profile_pic,
+                'bio'               => $bio,
+                'city'              => $city,
+                'country'           => $country,
+                'company'           => $company,
+                'position'          => $position,
+                'job_description'   => $job_description
 			]);
 
 		}catch(Exception $e){

@@ -20,12 +20,12 @@
             <img class="media-object dp img-circle" src="{{$user->profile_pic}}" style="width: 100px;height:100px;">
         </a>
         <div class="media-body">
-            <h4 class="media-heading">{{$user->name}}<small> USA</small></h4>
-            <h5>Student at <a href="http://gridle.in">UTSA</a></h5>
+            <h4 class="media-heading">{{$user->name}}<small> {{$user->city}}, {{$user->country}}</small></h4>
+            <h5>{{$user->position}} at {{$user->company}}</h5>
             <hr style="margin:8px auto">
 
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.                
+                {{$user->bio}}                
             </p>
         </div>
     </div>
