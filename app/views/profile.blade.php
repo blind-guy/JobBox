@@ -11,8 +11,7 @@
 	Date of Birth: <input type="date" class="form-control" type="text" value={{$user->email}} />
 	<br><input type="submit" class="form-control" value="Submit"></br>-->
 			<br></br>
-			THE ID IS {{$user->id}}
-			{{Form::open(['action'=> 'ProfileController@EditProfile', 'method' => 'GET', 'class' => 'form-horizontal'])}}	
+			{{Form::open(['action'=> 'ProfileController@EditProfile', 'method' => 'POST', 'class' => 'form-horizontal'])}}	
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Name</label>
 				<div class="col-sm-10">

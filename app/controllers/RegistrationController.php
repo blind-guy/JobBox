@@ -44,6 +44,11 @@ class RegistrationController extends \BaseController{
 		$repassword = Input::get('repassword');
 		$name = Input::get('name');
 		$gender = Input::get('gender');
+		$country = Input::get('country');
+		$bio = Input::get('bio');
+		$company = Input::get('company');
+		$position = Input::get('position');
+		$job_description = Input::get('job_description');
 
         $image = Input::file('image');
         $destination = 'public/images/';
@@ -70,7 +75,7 @@ class RegistrationController extends \BaseController{
 		}
 
 
-		Session::flash('success_message', 'Success! Welcome to Our Facbook');
+		Session::flash('success_message', 'Success! Welcome to Our Job Box');
 		return Redirect::to('/login');
 
 	}

@@ -22,15 +22,18 @@ class ProfileController extends \BaseController {
 		
 		$name = Input::get('name');
 		$email = Input::get('email');
-		$location = Input::get('location');
-		
+		$email = Input::get('email');
+		$password = Input::get('password');
+		$repassword = Input::get('repassword');
+		$country = Input::get('country');
+		$bio = Input::get('bio');
+		$company = Input::get('company');
+		$position = Input::get('position');
+		$job_description = Input::get('job_description');
+
 /*		try{
 		*/	
-			User::update([
-				'name' => $name,
-				'email' => $email,
-				'location' => $location
-			]);
+		$user->save();
 		/*catch(Exception $e){
 
 			//Errors Log 
