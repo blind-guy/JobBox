@@ -30,6 +30,37 @@
         </div>
     </div>
     <div class="media">
-        <h4>Recent Jobs<h4>
+        <h4>Custom Job Search</h4>
+        {{Form::open(['action' => 'HomeController@jobSearch', 'method' => 'POST', 'class' => 'form-horizontal'])}}
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Location</label>
+                <div class="col-sm-10">
+                    {{Form::text('location', null, ['placeholder' => 'city, state, or zip', 'class' => 'form-control', 'required']) }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Keywords</label>
+                <div class="col-sm-10">
+                    {{Form::text('keywords', null, ['placeholder' => 'search terms', 'class' => 'form-control', 'required']) }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    {{ Form:: submit('Search', ['class' => 'btn btn-primary']) }}
+                </div>
+            </div>
+        {{Form::close()}}
+    </div>
+    <div class="media">
+        <h4>Job Search Results</h4>
+        @if($search_results === null)
+            <p>No Results to Display</p>
+        @else
+            <p>Location: {{$search_results->location}} | Keywords: {{$search_results->query}}</p>
+            <div class="list-group">
+            @foreach($search_results->results->result as $jobresult)
+                <small><a href="{{$jobresult->url}}" class="list-group-item"><strong>{{$jobresult->company}}:</strong><br>{{$jobresult->jobtitle}} in {{$jobresult->city}}, {{$jobresult->state}}</a></small>
+            @endforeach
+        @endif
     </div>
 @stop
