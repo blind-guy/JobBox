@@ -10,65 +10,40 @@
 
 @section('content')
 <div class="container-fluid"> 
-    <!--col 1 -->
-    
-    <div class="col-md-1">
-    </div>
-
-    <!--col 2 -->
-    <div class="col-md-10 jobform">
-      @if(Session::has('error_message'))
+    @if(Session::has('error_message'))
         <div class="alert alert-danger" role="alert"> 
-          {{Session::get('error_message')}}
+            {{Session::get('error_message')}}
         </div>
-      @endif
-      @if(Session::has('success_message'))
+    @endif
+    
+    @if(Session::has('success_message'))
         <div class="alert alert-success" role="alert">  
-          {{Session::get('success_message')}}
+            {{Session::get('success_message')}}
         </div>
-      @endif
-      @if(Session::has('validation_messages'))
+    @endif
+    
+    @if(Session::has('validation_messages'))
         <div class="alert alert-danger" role="alert">
-          <h4>Oops! Something is wrong!</h4>
+            <h4>Oops! Something is wrong!</h4>
             @foreach(Session::get('validation_messages')->all() as $error)
-              {{$error}}<br>
+                {{$error}}<br>
             @endforeach
         </div>
-      @endif
+    @endif
 
-      <h1 class="text-center">{{$user->name}}'s Jobs</h1>
-      <hr>
-      @foreach($jobs as $job)
-                <div class="row job clearfix">
-                  <div class="col-md-7">
-                    <h3>{{$job->position}}</h3>
-                    <h4>{{$job->company_name}}</h4>
-
-                    <div class="panel-body" id="job_details">
-                      <h5>Date Posted: {{$job->posted}}</h5>
-                      <h6>{{$job->summary}}</h6>
-                    </div>
-                  </div>  
-
-                  <div class="col-md-3 container-fluid">
-                   <a href="http://{{$job->job_url}}" class="btn btn-default btn-block" id="job_url">View Listing</a>
-                  </div>     
-              
-                </div>
-                <hr>
-      @endforeach 
+    <div id="topmedia" class="media">
+        <h2>{{$user->name}}'s Jobs</h2>
+        <div class="list-group row">
+            @foreach($jobs as $job)
+                <a href="{{$job->job_url}}" class="list-group-item row">
+                <strong style="padding-left: 5px;">Company: </strong>{{$job->company_name}}<br>
+                <strong style="padding-left: 5px;">Position: </strong>{{$job->position}}<br>
+                <strong style="padding-left: 5px;">Date Posted: </strong>{{$job->posted}}<br>
+                <p><strong style="padding-left: 5px;">Summary: </strong>{{$job->summary}}</p>
+                </a>
+            @endforeach 
+        </div>
     </div>
-    <!-- end of form -->
-
-    <!--col 3 -->
-    <div class="col-md-1">
-
-    </div>  
-  </div>
-  <div class="container-fluid">
-    <div class="row" style="height:50px">
-    </div>
-  </div>
 @stop
 
 @section('footer')

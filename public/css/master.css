@@ -66,3 +66,6 @@ body{
     }
 }
 
+.form-control{
+    width: 73%;
+}

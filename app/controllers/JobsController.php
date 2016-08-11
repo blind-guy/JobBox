@@ -30,7 +30,7 @@ class JobsController extends \BaseController {
 
 
         $position = Input::get('position');
-        $companyid = Input::get('company');
+        $company_name = Input::get('company');
         $summary = Input::get('summary');
         $date_posted = Input::get('date'); // change
         $contactid = Input::get('contact');
@@ -58,8 +58,7 @@ class JobsController extends \BaseController {
         try{
             Job::create([
                 'position' => $position,
-                'company_id' => $companyid,
-                'company_name' => 'Company',
+                'company_name' => $company_name,
                 'summary' => $summary,
                 'posted' => $date_posted,
                 'expired' => '2017-01-01',
