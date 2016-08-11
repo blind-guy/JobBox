@@ -18,17 +18,53 @@
             <img class="media-object dp img-circle" src="<?php echo $user->profile_pic; ?>" style="width: 100px;height:100px;">
         </a>
         <div class="media-body">
-            <h4 class="media-heading"><?php echo $user->name; ?><small> USA</small></h4>
-            <h5>Student at <a href="http://gridle.in">UTSA</a></h5>
+            <h4 class="media-heading"><?php echo $user->name; ?><small> <?php echo $user->city; ?>, <?php echo $user->country; ?></small></h4>
+            <h5><?php echo $user->position; ?> at <?php echo $user->company; ?></h5>
             <hr style="margin:8px auto">
 
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.                
+                <?php echo $user->bio; ?>                
             </p>
         </div>
     </div>
     <div class="media">
-        <h4>Recent Jobs<h4>
+        <h4>Custom Job Search</h4>
+        <?php echo Form::open(['action' => 'HomeController@jobSearch', 'method' => 'POST', 'class' => 'form-horizontal']); ?>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Location</label>
+                <div class="col-sm-10">
+                    <?php echo Form::text('location', null, ['placeholder' => 'city, state, or zip', 'class' => 'form-control', 'required']); ?>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Keywords</label>
+                <div class="col-sm-10">
+                    <?php echo Form::text('keywords', null, ['placeholder' => 'search terms', 'class' => 'form-control', 'required']); ?>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <?php echo Form:: submit('Search', ['class' => 'btn btn-primary']); ?>
+
+                </div>
+            </div>
+        <?php echo Form::close(); ?>
+
+    </div>
+    <div class="media">
+        <h4>Job Search Results</h4>
+        <?php if($search_results === null): ?>
+            <p>No Results to Display</p>
+        <?php else: ?>
+            <p>Location: <?php echo $search_results->location; ?> | Keywords: <?php echo $search_results->query; ?></p>
+            <div class="list-group">
+            <?php foreach($search_results->results->result as $jobresult): ?>
+                <small><a href="<?php echo $jobresult->url; ?>" class="list-group-item"><strong><?php echo $jobresult->company; ?>:</strong><br><?php echo $jobresult->jobtitle; ?> in <?php echo $jobresult->city; ?>, <?php echo $jobresult->state; ?></a></small>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 <?php $__env->stopSection(); ?>
 
