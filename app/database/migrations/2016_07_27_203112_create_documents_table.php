@@ -21,6 +21,8 @@ class CreateDocumentsTable extends Migration {
             $table->string('name');
             $table->string('location');
             $table->integer('jobid');
+            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
         });
 	}
 

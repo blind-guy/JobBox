@@ -33,3 +33,13 @@ Route::get( '/addjob', 'ListsController@getLists');
 //Route::get( '/addjob', 'JobsController@showAddJobsView');
 Route::post('/addjob', 'JobsController@addJob');
 Route::get( '/jobs', 'JobsController@viewJobs');
+
+// DropBox
+Route::get('/dropbox', 'DropboxAuthenticationController@showDropboxView');
+Route::post('/dropbox', 'DropboxAuthenticationController@authenticateUser');
+
+// My Documents
+Route::get('/mydocuments','DropboxAuthenticationController@showMyDocumentsView');
+Route::post('/mydocuments', 'DropboxAuthenticationController@uploadDocument');
+Route::get('/authenticated','DropboxAuthenticationController@dropboxAuthenticated');
+
