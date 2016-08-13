@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+	<title>Job Box | Edit Profile</title>
+@stop
+
 @section('style')
 	<link rel="stylesheet" type="text/css" href="/css/login.css">
 @stop

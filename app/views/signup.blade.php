@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	<title>FB | Sign Up Today</title>
+	<title>Job Box | Sign Up Today</title>
 @stop
 
 @section('style')

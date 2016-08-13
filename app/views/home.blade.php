@@ -1,5 +1,10 @@
 @extends('layouts.master')
 
+@section('title')
+	<title>Job Box | Home Page</title>
+@stop
+
+
 @section('style')
     <style>
     .media{
