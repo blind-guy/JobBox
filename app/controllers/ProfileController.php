@@ -23,6 +23,7 @@ class ProfileController extends \BaseController {
 		
 		$user->name = Input::get('name');
 		$user->email = Input::get('email');
+		$user->city = Input::get('city');
 		$user->country = Input::get('country');
 		$user->bio = Input::get('bio');
 		$user->company = Input::get('company');

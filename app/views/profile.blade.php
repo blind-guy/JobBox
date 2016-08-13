@@ -34,6 +34,12 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-sm-2 control-label">City</label>
+					<div class="col-sm-offset-2 col-sm-10">
+						{{Form::text('city', $user->city,  ['placeholder' => 'city', 'class' => 'form-control'])}}
+					</div>
+				</div>
+				<div class="form-group">
 					<label class="col-sm-2 control-label">Country</label>
 					<div class="col-sm-offset-2 col-sm-10">
 						{{Form::text('country', $user->country,  ['placeholder' => 'Country', 'class' => 'form-control'])}}
