@@ -1,11 +1,11 @@
 <?php 
 $I = new FunctionalTester($scenario);
-$I->wantTo('Login to FB');
+$I->wantTo('Login to Job Box');
 
 $I->amOnPage('/login');
 
-$I->fillField('email', 'a@gmail.com');
-$I->fillField('password', '12345');
+$I->fillField('email', 'test@test.com');
+$I->fillField('password', 'test');
 $I->click('Login');
 
-$I->seeCurrentUrlEquals('/feed');
+$I->seeCurrentUrlEquals('/home');
