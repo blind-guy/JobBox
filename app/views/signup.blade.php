@@ -66,7 +66,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Country</label>
                 <div class="col-sm-10">
-                    {{Form::text('country', null, ['class' => 'form-control'])}}
+                    {{Form::text('country', null, [ 'placeholder' => 'Country', 'class' => 'form-control'])}}
                 </div>
             </div>
 		    <div class="form-group">
