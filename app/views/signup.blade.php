@@ -95,13 +95,13 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">Company</label>
                 <div class="col-sm-10">
-                    {{Form::text('company', null, ['class' => 'form-control'])}}
+                    {{Form::text('company', null, ['placeholder' => 'Company', 'class' => 'form-control'])}}
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Position</label>
                 <div class="col-sm-10">
-                    {{Form::text('position', null, ['class' => 'form-control'])}}
+                    {{Form::text('position', null, ['placeholder' => 'Position', 'class' => 'form-control'])}}
                 </div>
             </div>
             <div class="form-group">
