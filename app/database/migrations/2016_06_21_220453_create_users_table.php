@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration {
 			$table->text('company');
 			$table->text('position');
 			$table->text('job_description');
+			$table->text('city');
 			$table->rememberToken();
 			$table->timestamps();
 		});
