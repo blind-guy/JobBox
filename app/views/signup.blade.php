@@ -43,7 +43,7 @@
 			    </div>	
 	    	</div>	
 	    	<div class="form-group">
-	    		<label class="col-sm-2 control-label"></label>
+	    		<label class="col-sm-2 control-label">Re-type password</label>
     			<div class="col-sm-10">
 				    {{ Form::password("repassword" , [ 'placeholder' => 'Re-type Password', 'class' => 'form-control', 'required'])}}
 			    </div>	
@@ -73,7 +73,7 @@
 			    <label class="col-sm-2 control-label">Gender</label>
 			    <div class="col-sm-10">
 				    {{Form::radio('gender', 'male')}} Male
-				    <br>
+				    <br> 
 				    {{Form::radio('gender', 'female')}} Female
 			    </div>	
 		    </div>
