@@ -62,12 +62,12 @@
                                 <li><a href='/addjob'>Add Job</a></li>
                                 <li><a href='/profile'>Edit Profile</a></li>
                                 <li><a href="/dropbox">Manage Documents</a></li>
-                                <li><a href="#">Manage Contacts</a></li>
+                                <!--<li><a href="#">Manage Contacts</a></li>
                                 <li><a href="#">Archived Jobs</a></li>      
                                 <li><a href='/about'>About JobBox</a></li>
                                 <li><a href='/faq'>FAQ</a></li>          
                                 <li><a href='/support'>Support</a></li>
-                                <li><a href='/contact'>Contact Us</a></li>
+                                <li><a href='/contact'>Contact Us</a></li>-->
                             </ul>
                         </div><!--/.nav-collapse -->
                     </div>
