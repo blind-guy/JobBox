@@ -1,3 +1,7 @@
+<?php $__env->startSection('title'); ?>
+	<title>Job Box | Edit Profile</title>
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('style'); ?>
 	<link rel="stylesheet" type="text/css" href="/css/login.css">
 <?php $__env->stopSection(); ?>
@@ -25,6 +29,13 @@
 					<label class="col-sm-2 control-label">Email</label>
 					<div class="col-sm-10">
 						<?php echo Form::email('email', $user->email, [ 'placeholder' => 'Email', 'class' => 'form-control', 'required']); ?>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">City</label>
+					<div class="col-sm-offset-2 col-sm-10">
+						<?php echo Form::text('city', $user->city,  ['placeholder' => 'city', 'class' => 'form-control']); ?>
 
 					</div>
 				</div>

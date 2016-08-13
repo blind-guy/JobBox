@@ -53,13 +53,11 @@ class RegistrationController extends \BaseController{
 		$job_description = Input::get('job_description');
 
         $image = Input::file('image');
-		if($image != null){
         $destination = 'public/images/';
         $filename = $image->getClientOriginalName();
         $image->move($destination, $filename);
         Image::make($destination.$filename)->fit(300, 300)->save($destination.$filename);
         $profile_pic = 'images/'.$filename;
-		}	
 /*        var_dump($profile_pic);
         die(); */
 		try{
